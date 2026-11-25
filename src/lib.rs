@@ -1,6 +1,6 @@
 //! Byte Tactics mod tooling: the `btm_mod.json` v1 manifest, the resolver that turns a
 //! set of mods into the resolved mod set and its hash, the conversion to the netplay
-//! lobby's mod list. See sections 2.1 to 2.6 of the modding plan
+//! lobby's mod list, and the `btm-mod` CLI. See sections 2.1 to 2.6 of the modding plan
 //! and `docs/resolved-set.md`.
 //!
 //! ```
@@ -24,13 +24,16 @@
 //! ```
 
 mod canon;
+pub mod cli;
 pub mod digest;
+pub mod fs;
 mod json;
 pub mod lobby;
 pub mod manifest;
 pub mod names;
 pub mod range;
 pub mod resolve;
+pub mod template;
 
 pub use canon::{MOD_TAG, SET_TAG};
 pub use digest::Digest;
