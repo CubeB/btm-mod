@@ -1,0 +1,28 @@
+[package]
+name = "btm-mod"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.99"
+license = "MIT"
+description = "Byte Tactics mod tooling: the btm_mod.json v1 manifest, the deterministic mod-set resolver and its hash, and the btm-mod CLI."
+repository = "https://github.com/CubeB/btm-mod"
+
+[lib]
+name = "btm_mod"
+path = "src/lib.rs"
+
+[dependencies]
+glob = "0.3"
+semver = { version = "1", features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+thiserror = "2"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
